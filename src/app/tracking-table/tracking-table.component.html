@@ -1,0 +1,34 @@
+<div class="mt-5">
+  <accordion class="w-50" [isAnimated]="true" *ngFor="let tracking of trackingNumbers">
+    <accordion-group heading="Tracking Number: {{tracking.tracking_number}}">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            Shipping Carrier: {{tracking.shipping_carrier}}
+          </div>
+          <div class="col-sm">
+            Shipping Method: {{tracking.shipping_method}}
+          </div>
+          <div class="col-sm">
+            Shipping Date: {{tracking.ship_date | date}}
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            Tracked On: {{tracking.timeStamp | date:'medium'}}
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            Estimated Delivery Date: {{tracking.deliveryDate | date}}
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <a href="{{tracking.tracking_url}}" target="_blank">Tracking Info</a>
+          </div>
+        </div>
+      </div>
+    </accordion-group>
+  </accordion>
+</div>
